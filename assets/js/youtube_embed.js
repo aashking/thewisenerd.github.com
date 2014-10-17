@@ -77,7 +77,6 @@ $(document).ready(function(){
 
 	$('.embed-youtube').on('click', function(e) {  
 
-
 		$(".embed-youtube").attr("class", "embed-youtube-vid");
 
 		$('.embed-youtube-vid').html(function(){

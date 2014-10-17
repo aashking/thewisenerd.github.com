@@ -23,6 +23,25 @@
     <script type='text/javascript' src='../../../../assets/js/tweetfetch.js'></script>
     <script type='text/javascript' src='../../../../assets/js/shell.js'></script>
 
+    <script>
+		$(document).ready(function(){
+		
+			$('.embed-youtube').on('click', function(e) {  
+		
+				$(".embed-youtube").attr("class", "embed-youtube-vid");
+		
+				$('.embed-youtube-vid').html(function(){
+					if ( $('.embed-youtube-vid').attr('id') == undefined ) {
+						return "no video id set!";
+					} else {
+						return fix_player( $('.embed-youtube-vid').attr('id') );
+					}
+				});
+		
+			});
+		});
+    </script>
+
     <meta name="generator" content="Ghost 0.5" />
 <link rel="alternate" type="application/rss+xml" title="/dev/random" href="../../../../rss/index.html">
 <link rel="canonical" href="http://thewisenerd.github.io/2014/08/28/public-ip-redirects-to-router-config-page/" />
