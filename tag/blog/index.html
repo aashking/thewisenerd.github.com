@@ -58,55 +58,41 @@
         <div id="ajax-container">
             <div id="content">
     <div id="latest-post" class="container">
-                <article class="post tag-random tag-blog tag-net">
+                <article class="post tag-blog tag-ajax tag-net-2">
                     <header class="post-header clearfix">
         
-                        <h1 class="post-title">Public IP Redirects to Router Config Page</h1>
+                        <h1 class="post-title">updates to the website</h1>
 
-                        <p class="post-date"><time datetime="Thu Aug 28 2014 02:00:42 GMT+0530 (IST)">Published August 28th 2014</time></p>
+                        <p class="post-date"><time datetime="Sat Oct 18 2014 01:12:08 GMT+0530 (IST)">Published October 18th 2014</time></p>
                     </header>
 
                     <div class="post-content">
-                        <p>This is a <i>small</i> issue that I faced when installing and testing Wordpress. <br />
-This wasn’t an issue in the first place, just a limitation. As I needed to <br />
-continuously update, and check my website, and I couldn’t use my <br />
-“<a href="http://thewisenerd.no-ip.org/" target="_blank">thewisenerd.no-ip.org</a>”
-address, I was annoyed.</p>
+                        <p>I've recently moved to the ghostwriter theme by <a href="http://alensubat.me/">Alen Subat</a>. I've been waiting to do it since I stumbled upon its ajax-awesomeness, the <em>kewl</em> transitions, etc; and will share with you, in the upcoming posts, some of the challenges that I faced (a few, apparently), and a few <em>features</em> that I'd like to share; a 'youtube embed'er' script <em>(i got tired and didn't want to copy-paste youtube embed codes)</em>, getting it working with ajax, a random quote generator, font-icons (from FontAwesome), a tweet embedder, etc. <br />
+Not to bore you on this post, there's a  </p>
 
-<p>The <i>problem</i> was that when I used my xyz.no-ip.org address, it got <br />
-redirected to my IP, and my router, instead of redirecting it to port 80 <br />
-to my PC, connected to LAN, forwarded it to its own port 80, thus causing this <i>small</i> glitch.</p>
-
-<p>An easy fix for this, was (in linux, of course), was modifying the /etc/hosts file. <!-- more --> <br />
-The <strong>/etc/hosts</strong> file is used to reverse-lookup domain names first, followed by the <br />
-computer sending out a DNS query (if the name-to-IP lookup fails in the <br />
-<strong>/etc/hosts</strong> file). So, I simply added the following line to the end it, and was editing my site from my favorite browser, instead of
-accessing my blog from the Tor Browser.</p>
-
-<pre><code>192.168.1.x thewisenerd.no-ip.org  
+<pre><code>&lt;q&gt;quote tag&lt;/q&gt;  
 </code></pre>
 
-<p>The question arises: Why does the router forward requests from LAN to <br />
-itself while requests from other computers to my WordPress server? The <br />
-answer is pretty simple. There was a  </p>
+<p>that might interest you. It encloses the text within, with two quotes <br />
+<q>like this text here</q> <br />
+as seen. <br />
+Hope you like the new look, and hope to post regular updates, but given the lack of time, and me being a not-so-good writer, this blog is sure doomed to be irregular. <br />
+Anyways, catch ya later. Bye.</p>
 
-<blockquote>
-  <p>Enable or restrict LAN-side
-  management access to the DSL router</p>
-</blockquote>
-
-<p>option in my router config page. <br />
-It meant that computers connected to the LAN could access the router <br />
-settings to modify them. I could not get myself disabling it, as I do <br />
-meddle with the DSL settings quite often.</p>
-
-                            <p class="post-tags"><span>Tagged:</span> <a href="../random/index.html">random</a>, <a href="index.html">blog</a>, <a href="../net/index.html">net</a></p>
+                            <p class="post-tags"><span>Tagged:</span> <a href="index.html">blog</a>, <a href="../ajax/index.html">ajax</a>, <a href="../net-2/index.html"> net</a></p>
                     </div>
                 </article>
     </div>
 
     <div id="post-index" class="container">
         <ol class="post-list">
+                <li class="post-stub">
+                    <a class="js-ajax-link"  title="updates to the website" href="../../2014/10/18/updates-to-the-website/index.html">
+                        <h4 class="post-stub-title">updates to the website</h4>
+
+                        <time class="post-stub-date" datetime="Sat Oct 18 2014 01:12:08 GMT+0530 (IST)">Published October 18th 2014</time>
+                    </a>
+                </li>
                 <li class="post-stub">
                     <a class="js-ajax-link"  title="Public IP Redirects to Router Config Page" href="../../2014/08/28/public-ip-redirects-to-router-config-page/index.html">
                         <h4 class="post-stub-title">Public IP Redirects to Router Config Page</h4>

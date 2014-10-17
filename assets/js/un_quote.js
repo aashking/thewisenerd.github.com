@@ -76,9 +76,9 @@
     "I would be delighted to offer any advice I can on understanding women. When I have some, I’ll let you know. - Captain Picard to Data, Star Trek: The Next Generation, 'In Theory'",
     "It is possible to commit no errors and still lose. That is not a weakness. That is life. - Captain Picard to Data, Star Trek: The Next Generation, 'Peak Performance'",
     "If you are not paying for it, you're not the customer; you're the product being sold. - blue_beetle (Andrew Lewis)",
-    "\"Nobody believes the official spokesman... but everybody trusts an unidentified source.\" ~Ron Nelson",
-    "\"The source of humor itself is not joy, but sorrow\" - Mark Twain",
-    "\"That BBM is free for iOS and Android, and BlackBerry users have to pay for it.\" - Unknown",
+    "Nobody believes the official spokesman... but everybody trusts an unidentified source. ~Ron Nelson",
+    "The source of humor itself is not joy, but sorrow - Mark Twain",
+    "That BBM is free for iOS and Android, and BlackBerry users have to pay for it. - Unknown",
     "Some people are poor, all they have is money.",
     "The world's hunger is getting ridiculous. There is more fruit in a rich man's shampoo than in a poor man's plate.",
     "What goes around comes around.",
@@ -115,7 +115,5 @@
  var random_quote = "<i>" + smarten(quotations[my_pick]) + "</i>";
 
  // This actually displays the quote.
- // document.write(random_quote)
- //document.writeln("random_quote");
  document.getElementById("currentquote").innerHTML = random_quote;
  }
