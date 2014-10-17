@@ -67,6 +67,10 @@ jQuery(function($) {
                 loading = false;
                 showIndex = false;
             });
+        //hax fix for youtube-embed.
+        function fix_player(e){var t="";t+="<iframe";if($(".post-content").width()<embed_width){embed_width=$(".post-content").width()}var n=.75*embed_width;t+=' width="'+embed_width+'"';t+=' height="'+n+'"';t+=' src="//www.youtube';if(privacy_enabled)t+="-nocookie";t+=".com/embed/";t+=e;if(show_suggested_videos)t+="?rel=0";t+='"';t+=' frameborder="0"';t+=" allowfullscreen";t+="></iframe>";return t}var embed_width="640";var privacy_enabled=1;var show_suggested_videos=0;
+        if($(".embed-youtube").size()){$(".embed-youtube").html(function(){if($(".embed-youtube").attr("id")==undefined){return"no video id set!"}else{return fix_player($(".embed-youtube").attr("id"))}})}
+
         });
     });
 
