@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <title>init.d - /dev/random</title>
+    <meta name="description" content="" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="../../assets/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="../../assets/css/nprogress.css" />
+    <link rel="stylesheet" type="text/css" href="../../assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&amp;subset=latin,cyrillic-ext,latin-ext,cyrillic" />
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
+
+    <!-- jQuery -->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+    <!-- random quote generator! -->
+    <script type="text/javascript" src="../../assets/js/un_quote.js"></script>
+
+    <!-- youtube embed'er! -->
+    <script type='text/javascript' src='../../assets/js/youtube_embed.min.js'></script>
+
+    <!-- don't open this! -->
+    <script type='text/javascript' src='../../assets/js/shell.js'></script>
+
+    <meta name="generator" content="Ghost 0.5" />
+<link rel="alternate" type="application/rss+xml" title="/dev/random" href="../../rss/index.html">
+<link rel="canonical" href="http://thewisenerd.github.io/tag/init-d/" />
+
+</head>
+<body class="tag-template tag-init-d">
+    
+    <div class="wrapper">
+        
+        <header class="site-header">
+            <div class="container">
+
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a class="js-ajax-link" title="/dev/random" href="http://thewisenerd.github.io">/dev/random</a>
+                        <a class="button-social js-ajax-link js-show-index" href="http://thewisenerd.github.io" title="list of posts" ><i class="fa fa-reorder"></i></a>
+                        <a class="button-social" href="../../about.html" title="about" ><i class="fa fa-info"></i></a>
+                        <a class="button-social" href="../../projects.html" title="projects" ><i class="fa fa-wrench"></i></a>
+                        <a class="button-social" href="http://thewisenerd.github.io/rss" title="rss"><i class="fa fa-rss"></i></a>
+                    </h1>
+                </div>
+
+            </div>
+        </header>
+        <div id="banner" >
+            <h2 align="center" style="margin-top:100px;"><q id="currentquote"></q></h2>
+        </div>
+
+        <div id="ajax-container">
+            <div id="content">
+    <div id="latest-post" class="container">
+                <article class="post tag-init-d tag-linux tag-scripts">
+                    <header class="post-header clearfix">
+        
+                        <h1 class="post-title">on why I love &amp;&amp; hate init.d scripts at the same time (in linux)?</h1>
+
+                        <p class="post-date"><time datetime="Tue Sep 09 2014 15:28:53 GMT+0530 (IST)">Published September 9th 2014</time></p>
+                    </header>
+
+                    <div class="post-content">
+                        <p>I'm from an <em>'droid</em> kind of a background where init.d scripts simply ran; which is what they were supposed to do anyways. I would say that would be the simplest and most reasonable cause for init.d to ever exist; but on phones, should it be that way. 'droid phones don't have alot of <em>functionality</em> to perform, nor do they have to worry about <em>services</em> and stuff, which is/ or should be handled by the frameworks, so, which leaves to the basic init.d which would run at every startup (<em>called</em> actually), to run a couple of commands which would set up the device for usage. I had written a fairly long post <a href="http://forum.xda-developers.com/showpost.php?p=48632724&amp;postcount=12">here</a>, on how init.d scripts work in 'droid (as a follow up to my explaination of how <em>memory increasing</em> scripts worked on 'droid <a href="http://forum.xda-developers.com/showpost.php?p=48606215&amp;postcount=6">here</a>); which all clearly explain that init.d scripts were simple in 'droid. And it needn't be any more complicated than that/ or could be, for the reason that handling a bunch of services, start/stop dawgmons, all with the busybox, or a proprietary <em>toolbox</em>; I don't even know if it all would be possible.</p>
+
+<p>But then, there's unix. I'm assuming that the <em>stone age</em> init.d scripts for a unix based system, was as simple as the ones we have in 'droid devices today, given there wasn't much to systems those days. But as they grew increasingly complex, and as the concepts of services, background processes, daemons coming into picture, the necessity of increasing complexity can clearly be seen. From some of the <em>README</em> files found in the folders, they date back to <em>System V init</em> documentation, which makes me think: Were computers made that complex since the very beginning? I'm hoping the answer would be time, for from what I know, the System V wasn't the first of computers, or of unix based computers to that day.</p>
+
+<p>Which brings me to another question of "Why are the init systems so complex?" The logical answer would be that "a lot of simple systems together make a complex system". Closely looking at it, I find even the creation of a simple init.d script slightly <em>annoying</em>, for the fact that they used to be simple at a 'droid level. Some of the documentation makes it seemingly mandatory to add some header text, which frankly speaking, I hate.</p>
+
+<p>Having spoken so much on why I hate them, lemme also add a few points on why I love them. They can be configured to run at any user level. Want a program/stuff to be done when computer turns on, &lt;<em>xyz</em>> logs in/out, when system is shutdown, etc. The core concept behind, is that these are essentially services in an operating system, or so they have tended to be, which can be toggled from userspace using the  </p>
+
+<pre><code>sudo service &lt;foo&gt; &lt;bar&gt;
+</code></pre>
+
+<p>commands, where <em>foo</em> is the service and <em>bar</em> are the "commands". You might toggle the service, check it's status, restart the service, etc, etc, given you set up the init.d script <strong>correctly</strong>; which is often not very often. Given that, init.d scripts come in handy for this very purpose, as I have a lot of programs that run as services, such as <a href="http://www.noip.com/">noip2</a> (which updates my no-ip's DNS to my current IP (yes, I do have dynamic IP :( )), <a href="http://tomcat.apache.org/">apache tomcat</a> (as usual, the webserver most people use), and OFC, <a href="https://ghost.org/">ghost</a> (the blogging platform I write in, which you are reading). I think the most prominent reason for me to actually <em>love</em> them scripts are written above: "They are user-friendly." You don't need to bother about how they work, let alone write one (It's difficult. I tried.).</p>
+
+<p>In the end, it is its simplicity (it's written in bash <em>mostly</em>), which upon multiple layers of recursion seems complex (but <em>not</em> complex enough), which is what put me in the boolean tristate condition; where I couldn't love or hate them.</p>
+
+                            <p class="post-tags"><span>Tagged:</span> <a href="index.html">init.d</a>, <a href="../linux/index.html">linux</a>, <a href="../scripts/index.html">scripts</a></p>
+                    </div>
+                </article>
+    </div>
+
+    <div id="post-index" class="container">
+        <ol class="post-list">
+                <li class="post-stub">
+                    <a class="js-ajax-link"  title="on why I love &amp;&amp; hate init.d scripts at the same time (in linux)?" href="../../2014/09/09/on-why-i-love-hate-init-d-scripts-at-the-same-time-on-linux/index.html">
+                        <h4 class="post-stub-title">on why I love &amp;&amp; hate init.d scripts at the same time (in linux)?</h4>
+
+                        <time class="post-stub-date" datetime="Tue Sep 09 2014 15:28:53 GMT+0530 (IST)">Published September 9th 2014</time>
+                    </a>
+                </li>
+        </ol>
+
+        <div class="post-navigation">
+            <nav class="pagination" role="navigation">
+    <span class="page-number">Page 1 of 1</span>
+</nav>
+        </div>
+    </div>
+<footer class="footer">
+    <div class="container">
+        <div class="site-title-wrapper">
+            <h1 class="site-title">
+	            <a class="js-ajax-link" title="/dev/random" href="http://thewisenerd.github.io">/dev/random</a>
+                <!-- Add href value for your social media links -->
+				<a class="button-social" href="https://twitter.com/the_wisenerd" target="_blank"><i class="fa fa-twitter-square"></i></a>
+				<a class="button-social" href="https://github.com/thewisenerd" target="_blank"><i class="fa fa-github-alt"></i></a>
+				<a class="button-social" href="mailto:contact.twn@openmailbox.org" target="_blank"><i class="fa fa-envelope"></i></a>
+				<a class="button-social button-jump-top js-jump-top" href="index.html#"><i class="fa fa-angle-up"></i></a>
+            </h1>
+        </div>
+        <p class="footer-copyright">&copy; 2014 / Powered by <a href="http://tryghost.org">Ghost</a> / Inspired by <a href="http://jollygoodthemes.com">JollyGoodThemes</a> / Polished by <a href="http://alensubat.me">Alen Subat</a> aka <a href="http://curiousnerd.me">Curious Nerd</a></p>
+    </div>
+</footer>
+</div>
+        </div>
+
+    </div>
+
+    <script type="text/javascript" src="../../assets/js/jquery.history.js"></script>
+    <script type="text/javascript" src="../../assets/js/nprogress.js"></script>
+    <script type="text/javascript" src="../../assets/js/scripts.js"></script>
+
+</body>
+</html>
