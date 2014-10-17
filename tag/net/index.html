@@ -24,21 +24,18 @@
     <script type='text/javascript' src='../../assets/js/shell.js'></script>
 
     <script>
-		$(document).ready(function(){
-		
-			$('.embed-youtube').on('click', function(e) {  
-		
-				$(".embed-youtube").attr("class", "embed-youtube-vid");
-		
-				$('.embed-youtube-vid').html(function(){
-					if ( $('.embed-youtube-vid').attr('id') == undefined ) {
-						return "no video id set!";
-					} else {
-						return fix_player( $('.embed-youtube-vid').attr('id') );
-					}
-				});
-		
+		$('.embed-youtube').on('click', function(e) {  
+	
+			$(".embed-youtube").attr("class", "embed-youtube-vid");
+	
+			$('.embed-youtube-vid').html(function(){
+				if ( $('.embed-youtube-vid').attr('id') == undefined ) {
+					return "no video id set!";
+				} else {
+					return fix_player( $('.embed-youtube-vid').attr('id') );
+				}
 			});
+	
 		});
     </script>
 
