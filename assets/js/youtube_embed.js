@@ -73,9 +73,9 @@ function css2json(css) {
     return s;
 }
 
-$(document).ready(function(){
-
+$(window).bind("load", function() {
 	$('.embed-youtube').on('click', function(e) {
+		alert("test");
 
 		$(".embed-youtube").attr("class", "embed-youtube-vid");
 
