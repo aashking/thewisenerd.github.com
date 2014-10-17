@@ -24,7 +24,8 @@
     <script type='text/javascript' src='../../assets/js/shell.js'></script>
 
     <script>
-		$('.embed-youtube').on('click', '.dynamicElement', function(e) {  
+		$(window).bind("load", function() {
+		$('.embed-youtube').on('click', function(e) {
 	
 			$(".embed-youtube").attr("class", "embed-youtube-vid");
 	
@@ -36,6 +37,7 @@
 				}
 			});
 	
+		});
 		});
     </script>
 
