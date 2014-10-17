@@ -75,7 +75,7 @@ function css2json(css) {
 
 $(document).ready(function(){
 
-	$('.embed-youtube').on('click', function(e) {  
+	$('.embed-youtube').on('click', function(e) {
 
 		$(".embed-youtube").attr("class", "embed-youtube-vid");
 
