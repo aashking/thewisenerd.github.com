@@ -1,0 +1,37 @@
+#! /bin/bash
+
+BDIR="github-blog"
+
+wget \
+	--recursive \
+	--page-requisites \
+	--no-parent \
+	--progress=dot \
+	--force-directories \
+	--no-host-directories \
+	--adjust-extension \
+	http://localhost:2368
+
+for i in $( echo about projects )
+do
+	mkdir -p ${i}/
+	if [ -e ${i}.1.html ]
+	then
+		mv ${i}.1.html ${i}/index.html
+	else
+		mv ${i}.html ${i}/index.html
+	fi
+done
+
+if [ -e rss.1 ]
+then
+	mv rss.* rss/index.html
+fi
+
+COMMIT_MSG=`date +"blog update on %d %b %Y at %H:%M:%S %Z"`
+
+git add --all
+
+git commit -a -m "$COMMIT_MSG"
+
+git push -u origin master
