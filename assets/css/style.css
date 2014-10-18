@@ -297,6 +297,7 @@ pre {
 	-webkit-hyphens:auto;
 	hyphens:auto;
 	word-wrap:break-word;
+	overflow: hidden;
 }
 
 /* ============================================================ */
