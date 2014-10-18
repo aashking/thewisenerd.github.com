@@ -35,15 +35,11 @@ jQuery(function($) {
 
     // Check if history is enabled for the browser
     if ( ! History.enabled) {
-		console.log("! History.enabled");
         return false;
     }
 
     History.Adapter.bind(window, 'statechange', function() {
         var State = History.getState();
-        console.log ("History.getState()");
-        console.log( State );
-        console.log("----------------");
 
         // Get the requested url and replace the current content
         // with the loaded content
@@ -56,9 +52,6 @@ jQuery(function($) {
             $ajaxContainer.fadeOut(500, function() {
                 $latestPost = $newContent.filter('#latest-post');
                 $postIndex = $newContent.filter('#post-index');
-				
-				console.log( "showIndex == "+ showIndex );
-				console.log("----------------");
 
                 $ajaxContainer.html($newContent);
                 $ajaxContainer.fadeIn(500);
@@ -81,20 +74,14 @@ jQuery(function($) {
 
     $('body').on('click', '.js-ajax-link, .pagination a', function(e) {
         e.preventDefault();
-		console.log ("body onclick loading"  + loading );
         if (loading === false) {
             var currentState = History.getState();
-            console.log("currentState");
-            console.log(currentState);
             var url = $(this).attr('href');
-            console.log("url:" + url);
             var title = $(this).attr('title') || null;
-            console.log("title:" + title);
 
             // If the requested url is not the current states url push
             // the new state and make the ajax call.
             if (url !== currentState.url.replace(/\/$/, "")) {
-				console.log(url + "!==" + currentState.url.replace(/\/$/, "") );
                 loading = true;
 
                 // Check if we need to show the post index after we've
@@ -102,9 +89,8 @@ jQuery(function($) {
                 if ($(this).hasClass('js-show-index') || $(this).parent('.pagination').length > 0) {
                     showIndex = true;
                 } else {
-					showIndex = false;
-				}
-				console.log ("showIndex" + showIndex);
+                    showIndex = false;
+                }
 
                 NProgress.start();
 
@@ -113,7 +99,6 @@ jQuery(function($) {
                 // Swap in the latest post or post index as needed
                 if ($(this).hasClass('js-show-index')) {
                     $('html, body').animate({'scrollTop': 0});
-                    console.log ("case 2");
 
                     NProgress.start();
 
@@ -124,7 +109,6 @@ jQuery(function($) {
                     showIndex = true;
                 } else {
                     $('html, body').animate({'scrollTop': 0});
-                    console.log ("case 3");
 
                     NProgress.start();
 
