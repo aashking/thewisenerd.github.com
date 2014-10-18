@@ -307,6 +307,11 @@ pre {
 }
 
 #latest-post {
+  -moz-hyphens:auto;
+  -ms-hyphens:auto;
+  -webkit-hyphens:auto;
+  hyphens:auto;
+  word-wrap:break-word;
   display: none;
 }
 
