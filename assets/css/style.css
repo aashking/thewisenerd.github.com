@@ -346,6 +346,11 @@ pre {
 
 .post-content {
   margin: 0 0 92px;
+  -moz-hyphens:auto;
+  -ms-hyphens:auto;
+  -webkit-hyphens:auto;
+  hyphens:auto;
+  word-wrap:break-word;
 }
 .post-content a:hover {
   border-bottom: 1px dotted #f03838;
