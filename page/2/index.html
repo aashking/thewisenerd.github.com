@@ -58,31 +58,44 @@
         <div id="ajax-container">
             <div id="content">
     <div id="latest-post" class="container">
-                <article class="post tag-random tag-hulk tag-quote">
+                <article class="post tag-init-d tag-linux tag-scripts">
                     <header class="post-header clearfix">
         
-                        <h1 class="post-title">random post</h1>
+                        <h1 class="post-title">on why I love &amp;&amp; hate init.d scripts at the same time (in linux)?</h1>
 
-                        <p class="post-date"><time datetime="Mon Sep 01 2014 19:46:40 GMT+0530 (IST)">Published September 1st 2014</time></p>
+                        <p class="post-date"><time datetime="Tue Sep 09 2014 15:28:53 GMT+0530 (IST)">Published September 9th 2014</time></p>
                     </header>
 
                     <div class="post-content">
-                        <p>another one of bruce banner.</p>
+                        <p>I'm from an <em>'droid</em> kind of a background where init.d scripts simply ran; which is what they were supposed to do anyways. I would say that would be the simplest and most reasonable cause for init.d to ever exist; but on phones, should it be that way. 'droid phones don't have alot of <em>functionality</em> to perform, nor do they have to worry about <em>services</em> and stuff, which is/ or should be handled by the frameworks, so, which leaves to the basic init.d which would run at every startup (<em>called</em> actually), to run a couple of commands which would set up the device for usage. I had written a fairly long post <a href="http://forum.xda-developers.com/showpost.php?p=48632724&amp;postcount=12">here</a>, on how init.d scripts work in 'droid (as a follow up to my explaination of how <em>memory increasing</em> scripts worked on 'droid <a href="http://forum.xda-developers.com/showpost.php?p=48606215&amp;postcount=6">here</a>); which all clearly explain that init.d scripts were simple in 'droid. And it needn't be any more complicated than that/ or could be, for the reason that handling a bunch of services, start/stop dawgmons, all with the busybox, or a proprietary <em>toolbox</em>; I don't even know if it all would be possible.</p>
 
-<p><img src="../../content/images/2014/Sep/Fh3gf.jpg" alt="" /></p>
+<p>But then, there's unix. I'm assuming that the <em>stone age</em> init.d scripts for a unix based system, was as simple as the ones we have in 'droid devices today, given there wasn't much to systems those days. But as they grew increasingly complex, and as the concepts of services, background processes, daemons coming into picture, the necessity of increasing complexity can clearly be seen. From some of the <em>README</em> files found in the folders, they date back to <em>System V init</em> documentation, which makes me think: Were computers made that complex since the very beginning? I'm hoping the answer would be time, for from what I know, the System V wasn't the first of computers, or of unix based computers to that day.</p>
 
-<p>The following couple lines make a lot of sense.</p>
+<p>Which brings me to another question of "Why are the init systems so complex?" The logical answer would be that "a lot of simple systems together make a complex system". Closely looking at it, I find even the creation of a simple init.d script slightly <em>annoying</em>, for the fact that they used to be simple at a 'droid level. Some of the documentation makes it seemingly mandatory to add some header text, which frankly speaking, I hate.</p>
 
-<p><img src="../../content/images/2014/Sep/a.gif" alt="" />
-<img src="../../content/images/2014/Sep/b.gif" alt="" /></p>
+<p>Having spoken so much on why I hate them, lemme also add a few points on why I love them. They can be configured to run at any user level. Want a program/stuff to be done when computer turns on, &lt;<em>xyz</em>> logs in/out, when system is shutdown, etc. The core concept behind, is that these are essentially services in an operating system, or so they have tended to be, which can be toggled from userspace using the  </p>
 
-                            <p class="post-tags"><span>Tagged:</span> <a href="../../tag/random/index.html">random</a>, <a href="../../tag/hulk/index.html">hulk</a>, <a href="../../tag/quote/index.html">quote</a></p>
+<pre><code>sudo service &lt;foo&gt; &lt;bar&gt;
+</code></pre>
+
+<p>commands, where <em>foo</em> is the service and <em>bar</em> are the "commands". You might toggle the service, check it's status, restart the service, etc, etc, given you set up the init.d script <strong>correctly</strong>; which is often not very often. Given that, init.d scripts come in handy for this very purpose, as I have a lot of programs that run as services, such as <a href="http://www.noip.com/">noip2</a> (which updates my no-ip's DNS to my current IP (yes, I do have dynamic IP :( )), <a href="http://tomcat.apache.org/">apache tomcat</a> (as usual, the webserver most people use), and OFC, <a href="https://ghost.org/">ghost</a> (the blogging platform I write in, which you are reading). I think the most prominent reason for me to actually <em>love</em> them scripts are written above: "They are user-friendly." You don't need to bother about how they work, let alone write one (It's difficult. I tried.).</p>
+
+<p>In the end, it is its simplicity (it's written in bash <em>mostly</em>), which upon multiple layers of recursion seems complex (but <em>not</em> complex enough), which is what put me in the boolean tristate condition; where I couldn't love or hate them.</p>
+
+                            <p class="post-tags"><span>Tagged:</span> <a href="../../tag/init-d/index.html">init.d</a>, <a href="../../tag/linux/index.html">linux</a>, <a href="../../tag/scripts/index.html">scripts</a></p>
                     </div>
                 </article>
     </div>
 
     <div id="post-index" class="container">
         <ol class="post-list">
+                <li class="post-stub">
+                    <a class="js-ajax-link"  title="on why I love &amp;&amp; hate init.d scripts at the same time (in linux)?" href="../../2014/09/09/on-why-i-love-hate-init-d-scripts-at-the-same-time-on-linux/index.html">
+                        <h4 class="post-stub-title">on why I love &amp;&amp; hate init.d scripts at the same time (in linux)?</h4>
+
+                        <time class="post-stub-date" datetime="Tue Sep 09 2014 15:28:53 GMT+0530 (IST)">Published September 9th 2014</time>
+                    </a>
+                </li>
                 <li class="post-stub">
                     <a class="js-ajax-link"  title="random post" href="../../2014/09/01/random-post-2/index.html">
                         <h4 class="post-stub-title">random post</h4>

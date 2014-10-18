@@ -58,96 +58,44 @@
         <div id="ajax-container">
             <div id="content">
     <div id="latest-post" class="container">
-                <article class="post tag-cpu tag-governor tag-boost tag-swap">
+                <article class="post">
                     <header class="post-header clearfix">
         
-                        <h1 class="post-title">boosting your cpu performance (a little?)</h1>
+                        <h1 class="post-title">deleting your facebook account? let me help.</h1>
 
-                        <p class="post-date"><time datetime="Sat Oct 18 2014 07:01:48 GMT+0530 (IST)">Published October 18th 2014</time></p>
+                        <p class="post-date"><time datetime="Sat Oct 18 2014 21:03:58 GMT+0530 (IST)">Published October 18th 2014</time></p>
                     </header>
 
                     <div class="post-content">
-                        <p>If you aren't new to the linux kernel (or the android kernel, a fork of the linux kernel), then you are probably familiar with the concept of "cpu governors". So, if you know about them, you can stop reading this post, and pump up the performance of your PC (a little) and change them governors yourself the next time you are doing some heavy processing like compiling something big (AOSP reference here), or  </p>
+                        <p>Ever wanted to delete your facebook account and couldn't get yourself to do it, or had two-three devices, and Facebook automatically logged in the other devices cancelling the deletion?</p>
 
-<pre><code>avconv -i awesomemovie.mp4 -c:a copy -c:v copy outfile.avi  
-</code></pre>
+<p>(<em>in case you are wondering if facebook does really have a "delete account" option, yes. It does. go <a href="https://www.facebook.com/help/delete_account">here</a>.</em></p>
 
-<p>you get the drift.</p>
+<p>So, follow the following steps, enjoy!</p>
 
-<p>Governors for CPUs in a nutshell:  </p>
+<ul>
+<li>Go to Facebook, change your password.</li>
+<li>Make sure it is from a random website generator (<a href="http://bit.ly/HksvBX">here</a>).</li>
+<li>Go to <a href='https://www.facebook.com/help/delete_account'>https://www.facebook.com/help/delete_account</a> and delete your account.</li>
+<li>make sure you select "log out of other devices"</li>
+<li>wait for 14 days, and voilà! you have successfully deleted your account.</li>
+</ul>
 
-<blockquote>
-  <p>CPU frequency scaling enables the operating system to scale the CPU frequency up or down in order to save power. CPU frequencies can be scaled automatically depending on the system load, in response to ACPI events, or manually by userspace programs.</p>
-</blockquote>
+<p>Also, to make sure you don't/can't get back in, forever, even if you made a backup of your randomly generated password, change your email to some temporary email provider (<a href="http://bit.ly/tPAYVx">here</a>). That way, even if you can't fight the urge to not go back in, you have a goofproof plan 😜</p>
 
-<p><em>>documentation "taken" from archlinux <a href="https://wiki.archlinux.org/index.php/CPU_frequency_scaling">wiki</a> (they have awesome docs)</em></p>
-
-<p>So, they either pump up the power consumed by your CPU, which increases performance (a bit), unless of course you are running a PIII or a PIV (or a contemporary) which is pathetically slow (relatively) and nothing can be done about it; or they pump down the power consumed, read: lesser performance.</p>
-
-<p>The CPU freqs are basically the power you guzzle. If you are running 3.3 GHz, you are more likely to use more power than if you are running 1.6 GHz on the same processor; but hey! that can be <em>sacrificed</em> to save compile times or video conversion times! There are two cpufreqs (freq: frequency): scaling_min_freq, scaling_max_freq. Pretty self explainatory: min_freq is the minimum frequency your CPU is allowed to go down to, and CPU max freq the maximum frequency your CPU is allowed to go up. <br />
-For a list of available frequencies on your PC, sudo, and this:  </p>
-
-<pre><code>cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_frequencies  
-</code></pre>
-
-<p>why cpu0? because it is the most generic, omnipresent, yada yada, at least one core needed, yada yada, <em>really hoping you get the drift here</em>.</p>
-
-<p>Lets quickly jump over to governors. <br />
-<em>again from the archlinux wiki; focussing on two imporant governors</em></p>
-
-<table border="2px">  
-<tr>  
-<td>  
-ondemand  
-</td>  
-<td>  
-Dynamically switch between CPU(s) available if at 95% cpu load  
-</td>  
-</tr>  
-<tr>  
-<td>  
-performance  
-</td>  
-<td>  
-Run the cpu at max frequency  
-</td>  
-</table>
-
-<p>So, given what they do, I'll list out their uses: I use <strong>ondemand</strong> for day-to-day usage, and <strong>performance</strong> for compile times, heavy processing, etc, etc; and I suggest you do the same (unless of course, you want to be stuck up with ~3 hour compile times, and a only PC in the house).</p>
-
-<h4 id="howtoswitch">How to switch?</h4>
-
-<p>No big deal! Just this:  </p>
-
-<pre><code>echo &lt;governor-name&gt; | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor &gt;/dev/null  
-</code></pre>
-
-<p>&lt;governor-name&gt; can be got from/through/by this command:</p>
-
-<pre><code>cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_governors  
-</code></pre>
-
-<p>I also like to set the scaling<em>min</em>freq to a high value (not so high enough that it fries my PC), so that it can be a goofproof in case something goes wrong. How to do that? Simple again. <br />
-here, i'm setting the min scaling frequency of my CPU to 3.0 GHz:  </p>
-
-<pre><code>echo "3000000"   | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_min_freq &gt;/dev/null  
-</code></pre>
-
-<p>"&gt;/dev/null" redirects stdout to /dev/null supressing any... stdout(?).</p>
-
-<p><em>p.s.</em> If you are compiling, and you have swap, I would strongly recommend getting a USB3 drive (they sell pretty cheap these days), and hook that up with swap. Performance is definitely going to be up!</p>
-
-<p><em>p.p.s.</em> by all means, do NOT use swap. it is slow. If possible, get some more memory instead of a USB3 drive meant to be used as swap. The read-speed ratios about 100:1 (okay, exaggerating. maybe around 50:1. Get the point. Physical memory, RAM, is faster, always (unless you have a <em>kewl</em> drive that does a 25 gbit/s read)).</p>
-
-<p>Can't afford RAM (like me?), then you should perhaps tweak your "swappiness". Instead of me talking about it, I'll let <a href="http://askubuntu.com/users/38776/one-zero">One Zero</a>'s beautifully written answer enlighten you <a href="http://askubuntu.com/a/103916/245971">here</a>.</p>
-
-                            <p class="post-tags"><span>Tagged:</span> <a href="tag/cpu/index.html">cpu</a>, <a href="tag/governor/index.html">governor</a>, <a href="tag/boost/index.html">boost</a>, <a href="tag/swap/index.html">swap</a></p>
                     </div>
                 </article>
     </div>
 
     <div id="post-index" class="container">
         <ol class="post-list">
+                <li class="post-stub">
+                    <a class="js-ajax-link"  title="deleting your facebook account? let me help." href="2014/10/18/deleting-your-facebook-account-let-me-help/index.html">
+                        <h4 class="post-stub-title">deleting your facebook account? let me help.</h4>
+
+                        <time class="post-stub-date" datetime="Sat Oct 18 2014 21:03:58 GMT+0530 (IST)">Published October 18th 2014</time>
+                    </a>
+                </li>
                 <li class="post-stub">
                     <a class="js-ajax-link"  title="boosting your cpu performance (a little?)" href="2014/10/18/boosting-your-cpu-performance-a-little/index.html">
                         <h4 class="post-stub-title">boosting your cpu performance (a little?)</h4>
@@ -174,13 +122,6 @@ here, i'm setting the min scaling frequency of my CPU to 3.0 GHz:  </p>
                         <h4 class="post-stub-title">random rants</h4>
 
                         <time class="post-stub-date" datetime="Tue Sep 09 2014 16:11:41 GMT+0530 (IST)">Published September 9th 2014</time>
-                    </a>
-                </li>
-                <li class="post-stub">
-                    <a class="js-ajax-link"  title="on why I love &amp;&amp; hate init.d scripts at the same time (in linux)?" href="2014/09/09/on-why-i-love-hate-init-d-scripts-at-the-same-time-on-linux/index.html">
-                        <h4 class="post-stub-title">on why I love &amp;&amp; hate init.d scripts at the same time (in linux)?</h4>
-
-                        <time class="post-stub-date" datetime="Tue Sep 09 2014 15:28:53 GMT+0530 (IST)">Published September 9th 2014</time>
                     </a>
                 </li>
         </ol>
