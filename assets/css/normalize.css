@@ -164,12 +164,13 @@ pre,
 samp {
     font-family: monospace, serif;
     font-size: 1em;
-    -moz-hyphens:auto;
-    -ms-hyphens:auto;
-    -webkit-hyphens:auto;
-    hyphens:auto;
-    word-wrap:break-word;
-    overflow-x: auto;
+    overflow-x: scroll;
+    white-space: nowrap;
+    word-wrap: normal;
+    -moz-hyphens:none;
+    -ms-hyphens:none;
+    -webkit-hyphens:none;
+    hyphens:none;
 }
 
 /**
