@@ -164,7 +164,13 @@ pre,
 samp {
     font-family: monospace, serif;
     font-size: 1em;
-    overflow: scroll;
+    overflow-x: scroll;
+    white-space: normal;
+    word-wrap: normal;
+    -moz-hyphens:none;
+    -ms-hyphens:none;
+    -webkit-hyphens:none;
+    hyphens:none;
 }
 
 /**
