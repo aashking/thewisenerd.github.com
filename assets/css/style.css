@@ -351,11 +351,6 @@ pre {
 }
 
 .post-content {
-  -moz-hyphens:auto;
-  -ms-hyphens:auto;
-  -webkit-hyphens:auto;
-  hyphens:auto;
-  word-wrap:break-word;
   margin: 0 0 92px;
 }
 .post-content a:hover {
