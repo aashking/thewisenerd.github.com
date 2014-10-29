@@ -10,7 +10,7 @@ wget \
 	--force-directories \
 	--no-host-directories \
 	--adjust-extension \
-	http://localhost:2368
+	http://thewisenerd.no-ip.org/
 
 for i in $( echo about projects )
 do
