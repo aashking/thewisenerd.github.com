@@ -28,6 +28,8 @@ then
 	mv rss.* rss/index.html
 fi
 
+find . -type f \( ! -iname "*CNAME*" -and ! -iname "*.git*" -and ! -iname "mkwebsite.dat" \) -exec sed -i 's/no-ip.org/github.io/g' {} \;
+
 COMMIT_MSG=`date +"blog update on %d %b %Y at %H:%M:%S %Z"`
 
 git add --all
